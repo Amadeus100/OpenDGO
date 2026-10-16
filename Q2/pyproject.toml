@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opendgo-q2"
+version = "0.1.0"
+description = "OpenDGO Q2 role-position and information-allocation experiments"
+requires-python = ">=3.10"
+dependencies = ["httpx>=0.27", "PyYAML>=6.0"]
+
+[project.scripts]
+opendgo-q2 = "opendgo_q2.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
