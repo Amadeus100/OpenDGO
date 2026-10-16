@@ -1,0 +1,38 @@
+paths:
+  data_root: data
+  results_root: results/smoke
+  learned_graph_root: learned_graphs
+
+llm:
+  base_url: http://127.0.0.1:8993/v1
+  api_key: EMPTY
+  model: Qwen3-VL-8B-Instruct
+  temperature: 0.0
+  max_tokens: 300
+  final_max_tokens: 500
+  timeout_seconds: 120
+  request_retries: 1
+  max_concurrent_requests: 6
+
+experiment:
+  domains: [finance]
+  task_structures: [sequential_dependency, parallel_decomposition, evidence_integration]
+  organizations: [single_agent, star, chain, tree, ring, mesh, community]
+  seeds: [101]
+  tasks_per_cell: 2
+  synthesizer_node: 0
+  communication_rounds: 2
+  communication_budget_chars: 3000
+  max_total_tokens: 12000
+  final_token_reserve: 500
+  max_messages: 90
+  parse_repair_attempts: 1
+  repeat_limit: 3
+  unchanged_round_limit: 2
+  record_message_content: true
+
+executors:
+  coding:
+    command: []
+    timeout_seconds: 7200
+
