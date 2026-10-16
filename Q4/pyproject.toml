@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opendgo-q4"
+version = "0.1.0"
+description = "OpenDGO Q4 quality-cost-robustness experiments"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "PyYAML>=6.0"]
+
+[project.scripts]
+opendgo-q4 = "opendgo_q4.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

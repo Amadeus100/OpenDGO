@@ -1,0 +1,42 @@
+paths:
+  q1_data_root: ../Q1_Organization_Benchmark/data
+  results_root: results/q4
+
+llm:
+  base_url: http://127.0.0.1:8993/v1
+  api_key: EMPTY
+  model: Qwen3-VL-8B-Instruct
+  temperature: 0.2
+  max_tokens: 700
+  final_max_tokens: 1800
+  timeout_seconds: 600
+  request_retries: 1
+  max_concurrent_requests: 6
+
+experiment:
+  domains: [coding, finance, biomedical, legal, scientific_research, recommendation]
+  task_structures: [sequential_dependency, parallel_decomposition, evidence_integration]
+  organizations: [star, chain, tree, ring, mesh, community]
+  seeds: [101, 203, 307, 409, 503]
+  tasks_per_cell: 500
+  synthesizer_node: 0
+  communication_rounds: 5
+  communication_budget_chars: 6000
+  natural_max_total_tokens: 24000
+  final_token_reserve: 1800
+  max_messages: 180
+  parse_repair_attempts: 1
+  repeat_limit: 3
+  unchanged_round_limit: 2
+  record_message_content: true
+  token_caps: [6000, 9000, 12000, 15000, 18000, 24000]
+  fault_pressures_percent: [0, 10, 20, 30, 40, 50]
+  fault_agent_probability: 0.5
+  fault_channel_probability: 0.5
+  bootstrap_resamples: 10000
+  bootstrap_seed: 2026
+
+executors:
+  coding:
+    command: []
+    timeout_seconds: 7200
