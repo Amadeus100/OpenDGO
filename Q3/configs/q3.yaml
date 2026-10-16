@@ -1,0 +1,43 @@
+paths:
+  q1_data_root: ../Q1_Organization_Benchmark/data
+  graph_library_root: graph_library/generated
+  trace_annotation_root: data
+  results_root: results/q3
+
+llm:
+  base_url: http://127.0.0.1:8993/v1
+  api_key: EMPTY
+  model: Qwen3-VL-8B-Instruct
+  temperature: 0.2
+  max_tokens: 700
+  final_max_tokens: 1800
+  timeout_seconds: 600
+  request_retries: 1
+  max_concurrent_requests: 6
+
+experiment:
+  domains: [coding, finance, biomedical, legal, scientific_research, recommendation]
+  task_structures: [sequential_dependency, parallel_decomposition, evidence_integration]
+  seeds: [101, 203, 307, 409, 503]
+  synthesizer_node: 0
+  tasks_per_cell: 500
+  variant_graph_count: 18
+  matched_pairs_per_property: 10
+  communication_rounds: 5
+  communication_budget_chars: 6000
+  max_total_tokens: 24000
+  final_token_reserve: 1800
+  max_messages: 180
+  parse_repair_attempts: 1
+  repeat_limit: 3
+  unchanged_round_limit: 2
+  record_message_content: true
+  duplicate_jaccard_threshold: 0.90
+  bootstrap_resamples: 10000
+  bootstrap_seed: 2026
+
+executors:
+  coding:
+    command: []
+    timeout_seconds: 7200
+

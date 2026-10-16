@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opendgo-q3"
+version = "0.1.0"
+description = "OpenDGO Q3 controlled graph-property and interaction-mechanism experiments"
+requires-python = ">=3.10"
+dependencies = ["networkx>=3.2", "numpy>=1.26", "PyYAML>=6.0"]
+
+[project.scripts]
+opendgo-q3 = "opendgo_q3.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
